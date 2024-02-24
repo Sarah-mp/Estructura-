@@ -1,0 +1,30 @@
+# ciclos
+"""factorial:int=1
+
+for i in range(1,6):
+    factorial=i*factorial
+
+print(factorial)"""
+ 
+ #con funciones
+
+"""def  factorial(n:int)-> int:
+    if n== 1 or n==0
+        return 1
+    return n*factorial(n-1)
+print(factorial(5))"""
+
+# ejercicio
+
+def multiplicacion(a, b):
+    if b == 0:  # Caso base: si b es 0, el resultado es 0
+        return 0
+    elif b == 1:  # Caso base: si b es 1, el resultado es a
+        return a
+    else:
+        return a + multiplicacion(a, b - 1) if b > 0 else -multiplicacion(a, -b)
+    
+print(multiplicacion(7, -2))
+
+
+
