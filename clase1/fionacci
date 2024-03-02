@@ -1,13 +1,17 @@
 def fibonacci(n):
-    fibonacci_series = [0, 1]
-    
+    fib_series = [0, 1]
     for i in range(2, n):
-        next_term = fibonacci_series[i-1] + fibonacci_series[i-2]
-        fibonacci_series.append(next_term)
-    
-    return fibonacci_series
+        next_fib = fib_series[-1] + fib_series[-2]
+        fib_series.append(next_fib)
+    return fib_series
 
-# Ejemplo de uso:
-numero_de_terminos = 10
-resultado = fibonacci(numero_de_terminos)
-print("Serie de Fibonacci:", resultado)
+# Solicitar al usuario el número de términos de la serie de Fibonacci
+num_terminos = int(input("Ingrese el número de términos de la serie de Fibonacci: "))
+
+# Generar la serie de Fibonacci
+serie_fibonacci = fibonacci(num_terminos)
+
+# Imprimir la serie de Fibonacci
+print("Serie de Fibonacci:")
+for term in serie_fibonacci:
+    print(term, end=" ")
