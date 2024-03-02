@@ -2,19 +2,19 @@ class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
- 
+
 class Stack:
     def __init__(self):
         self.head = None
- 
+
     def is_empty(self):
         return self.head is None
- 
+
     def push(self, data):
         new_node = Node(data)
         new_node.next = self.head
         self.head = new_node
- 
+
     def pop(self):
         if self.is_empty():
             return None
@@ -22,12 +22,12 @@ class Stack:
         self.head = self.head.next
         popped_node.next = None
         return popped_node.data
- 
+
     def peek(self):
         if self.is_empty():
             return None
         return self.head.data
- 
+
     def display(self):
         current = self.head
         while current:
@@ -43,33 +43,22 @@ class Stack:
             current = current.next
         return count
 
-mi_pila = Stack()
+stack = Stack()
 
+stack.push(7)
+stack.push(10)
+stack.push(13)
 
-mi_pila.push(7)
-mi_pila.push(10)
-mi_pila.push(13)
+stack.display()  # Imprime: 13->10->7->
 
+print("Elemento superior de la pila:", stack.pop())  # Imprime: Elemento superior de la pila: 13
 
+stack.display()  # Imprime: 10->7->
 
-mi_pila.display()  # Esto debería imprimir: 3->2->1->
+print("Elemento superior de la pila:", stack.peek())  # Imprime: Elemento superior de la pila: 10
 
+stack.display()  # Imprime: 10->7->
 
-print("Elemento superior de la pila:", mi_pila.pop())  # Esto debería imprimir: Elemento superior de la pila: 3
+print("¿La pila está vacía?", stack.is_empty())  # Imprime: ¿La pila está vacía? False
 
-
-mi_pila.display()  # Esto debería imprimir: 2->1->
-
-
-print("Elemento superior de la pila:", mi_pila.peek())  # Esto debería imprimir: Elemento superior de la pila: 2
-
-
-mi_pila.display()  # Esto debería imprimir: 2->1->
-
-
-print("¿La pila está vacía?", mi_pila.is_empty())
-
-mi_pila.display() # Esto debería imprimir:
-
-
-
+print("Tamaño de la pila:", stack.size())  # Imprime: Tamaño de la pila: 2
