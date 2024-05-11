@@ -10,9 +10,9 @@ class Nodo:
 
     def evaluar_correo(self, correo):
         # Usar el modelo para predecir si el correo es spam o no
-        # El modelo espera una lista de textos, por eso pasamos [correo]
+       
         prediccion = self.modelo.predict([correo])[0]
-        return prediccion  # Devuelve 0 para 'no spam' y 1 para 'spam'
+        return prediccion  
 
     def insertar(self, correo):
         if self.correo is None:
