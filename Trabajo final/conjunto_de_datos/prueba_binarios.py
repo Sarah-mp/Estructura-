@@ -13,6 +13,8 @@ correos_de_prueba = [
     "Urgent: Your account has been breached. Immediate action required!",
     "Hello, don't forget the book club meeting tomorrow morning.",
     "Earn money fast! Guaranteed high returns with minimal investment. Click here!"
+    "hjbshsaksjskddksjkbjmbssjkbdjsasbjhsbdx"
+    
 ]
 
 correos_de_prueba = list (df["Message"]) # todos los correos del archivo CSV se utilizan para las pruebas.
