@@ -8,19 +8,25 @@ from sklearn.metrics import classification_report, confusion_matrix
 
 # Cargar datos
 df = pd.read_csv('spam.csv')
+
+# Se crea una nueva columna etiqueta que convierte la categoría de los mensajes ('ham' o 'spam') 
 df['etiqueta'] = df['Category'].map({'ham': 0, 'spam': 1})
 df['Spam'] = df['Category'].apply(lambda x: 1 if x == 'spam' else 0)
 
+#muestra las primeras filas del DataFrame 
 print(df.head())
 
+#muestran información sobre las columnas y el DataFrame 
 print(df.columns)
 print(df.info())
 
+#transforma los textos a vectores numéricos y luego aplica el clasificador MultinomialNB.
 clf = Pipeline([
     ('vectorizer', CountVectorizer()),
     ('nb', MultinomialNB())
 ])
 
+# X la columna de mensajes, y columna de etiquetas numéricas
 X = df['Message']
 y = df['etiqueta']
 

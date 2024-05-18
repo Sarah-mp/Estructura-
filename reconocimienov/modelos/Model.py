@@ -8,7 +8,7 @@ from keras.models import Sequential
 img_height = 180
 img_width = 180
 
-modelo_flores = tf.keras.models.load_model('flores.h5')
+modelo_flores = tf.keras.models.load_model('objetos.h5')
 
 
 sunflower_url = "https://storage.googleapis.com/download.tensorflow.org/example_images/592px-Red_sunflower.jpg"
